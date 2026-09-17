@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sauklaue – Entziffere die Schrift</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- STARTMENÜ -->
+    <div id="startScreen" class="screen">
+        <div class="card">
+            <h1>✍️ Sauklaue</h1>
+            <p class="subtitle">
+                Kannst du die Sauklaue entziffern?
+            </p>
+
+            <h2>Schwierigkeit auswählen</h2>
+
+            <div class="difficulty-container">
+                <button class="difficulty easy" onclick="startGame('easy')">
+                    🟢 Leicht
+                    <span>Gut lesbar</span>
+                </button>
+
+                <button class="difficulty normal" onclick="startGame('normal')">
+                    🟡 Normal
+                    <span>Etwas chaotisch</span>
+                </button>
+
+                <button class="difficulty hard" onclick="startGame('hard')">
+                    🟠 Schwer
+                    <span>Sehr schlechte Schrift</span>
+                </button>
+
+                <button class="difficulty extreme" onclick="startGame('extreme')">
+                    🔴 Extrem
+                    <span>Fast unlesbar</span>
+                </button>
+
+                <button class="difficulty impossible" onclick="startGame('impossible')">
+                    ☠️ Sauklaue
+                    <span>Viel Glück!</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- SPIEL -->
+    <div id="gameScreen" class="screen hidden">
+
+        <div class="game-container">
+
+            <header class="game-header">
+                <button class="back-button" onclick="backToMenu()">
+                    ← Menü
+                </button>
+
+                <div class="stats">
+                    <div>
+                        <span>Punkte</span>
+                        <strong id="score">0</strong>
+                    </div>
+
+                    <div>
+                        <span>Streak</span>
+                        <strong id="streak">0 🔥</strong>
+                    </div>
+
+                    <div>
+                        <span>Aufgabe</span>
+                        <strong>
+                            <span id="questionNumber">1</span>/10
+                        </strong>
+                    </div>
+                </div>
+            </header>
+
+
+            <main class="game-card">
+
+                <div class="difficulty-label" id="difficultyLabel">
+                    🟢 Leicht
+                </div>
+
+                <h1>Was steht hier?</h1>
+
+                <div id="handwriting" class="handwriting">
+                    Hallo Welt
+                </div>
+
+                <div class="input-area">
+                    <input
+                        type="text"
+                        id="answerInput"
+                        placeholder="Deine Antwort..."
+                        autocomplete="off"
+                        onkeydown="handleEnter(event)"
+                    >
+
+                    <button id="submitButton" onclick="checkAnswer()">
+                        Prüfen
+                    </button>
+                </div>
+
+                <div id="feedback" class="feedback"></div>
+
+                <button
+                    id="nextButton"
+                    class="next-button hidden"
+                    onclick="nextQuestion()"
+                >
+                    Nächste Aufgabe →
+                </button>
+
+            </main>
+
+        </div>
+    </div>
+
+
+    <!-- ENDSCREEN -->
+    <div id="endScreen" class="screen hidden">
+
+        <div class="card result-card">
+
+            <h1>🏆 Runde beendet!</h1>
+
+            <p>Du hast erreicht:</p>
+
+            <div class="final-score">
+                <span id="finalScore">0</span>
+                <small>Punkte</small>
+            </div>
+
+            <div class="result-stats">
+                <div>
+                    <strong id="correctAnswers">0</strong>
+                    <span>Richtig</span>
+                </div>
+
+                <div>
+                    <strong id="wrongAnswers">0</strong>
+                    <span>Falsch</span>
+                </div>
+
+                <div>
+                    <strong id="bestStreak">0</strong>
+                    <span>Beste Streak</span>
+                </div>
+            </div>
+
+            <button class="play-again" onclick="backToMenu()">
+                Nochmal spielen
+            </button>
+
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
