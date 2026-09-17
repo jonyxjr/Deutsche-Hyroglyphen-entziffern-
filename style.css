@@ -1,0 +1,421 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0f1117;
+    color: white;
+    min-height: 100vh;
+}
+
+
+/* =========================
+   ALLGEMEIN
+========================= */
+
+.screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================
+   STARTMENÜ
+========================= */
+
+.card {
+    width: 100%;
+    max-width: 600px;
+    background: #191c25;
+    border: 1px solid #2b2f3a;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.card h1 {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #9da3b4;
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+.card h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.difficulty-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.difficulty {
+    border: none;
+    border-radius: 14px;
+    padding: 18px;
+    text-align: left;
+    cursor: pointer;
+    background: #232733;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.difficulty span {
+    display: block;
+    color: #8f96a8;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.difficulty:hover {
+    transform: translateY(-2px);
+    background: #2c303d;
+}
+
+
+/* =========================
+   SPIEL
+========================= */
+
+.game-container {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.game-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.back-button {
+    border: none;
+    background: #191c25;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.back-button:hover {
+    background: #272b36;
+}
+
+.stats {
+    display: flex;
+    gap: 25px;
+}
+
+.stats div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stats span {
+    color: #8f96a8;
+    font-size: 12px;
+}
+
+.stats strong {
+    font-size: 18px;
+}
+
+
+/* =========================
+   GAME CARD
+========================= */
+
+.game-card {
+    background: #191c25;
+    border: 1px solid #2b2f3a;
+    border-radius: 24px;
+    padding: 50px 35px;
+    text-align: center;
+}
+
+.difficulty-label {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 20px;
+    background: #272b36;
+    color: #b9bfcc;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.game-card h1 {
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+
+/* =========================
+   SAUKLAUE
+========================= */
+
+.handwriting {
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        repeating-linear-gradient(
+            #fffef5,
+            #fffef5 42px,
+            #cbd5e1 43px
+        );
+
+    color: #111827;
+
+    border-radius: 14px;
+    padding: 30px;
+
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+
+    font-size: 48px;
+
+    margin-bottom: 35px;
+
+    overflow: hidden;
+
+    transform: rotate(-1deg);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================
+   EINGABE
+========================= */
+
+.input-area {
+    display: flex;
+    gap: 10px;
+    max-width: 650px;
+    margin: auto;
+}
+
+.input-area input {
+    flex: 1;
+
+    background: #101219;
+    border: 2px solid #303542;
+    color: white;
+
+    border-radius: 12px;
+
+    padding: 16px;
+
+    font-size: 17px;
+
+    outline: none;
+}
+
+.input-area input:focus {
+    border-color: #6366f1;
+}
+
+.input-area button {
+    border: none;
+    border-radius: 12px;
+
+    background: #6366f1;
+    color: white;
+
+    padding: 0 25px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.input-area button:hover {
+    background: #5558d8;
+}
+
+
+/* =========================
+   FEEDBACK
+========================= */
+
+.feedback {
+    min-height: 40px;
+    margin-top: 20px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.feedback.correct {
+    color: #4ade80;
+}
+
+.feedback.wrong {
+    color: #f87171;
+}
+
+.next-button {
+    border: none;
+    background: #272b36;
+    color: white;
+
+    padding: 14px 25px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    margin-top: 10px;
+}
+
+.next-button:hover {
+    background: #343946;
+}
+
+
+/* =========================
+   ENDSCREEN
+========================= */
+
+.result-card {
+    text-align: center;
+}
+
+.result-card p {
+    color: #9da3b4;
+    margin-top: 10px;
+}
+
+.final-score {
+    margin: 30px 0;
+}
+
+.final-score span {
+    display: block;
+    font-size: 70px;
+    font-weight: bold;
+}
+
+.final-score small {
+    color: #8f96a8;
+    font-size: 16px;
+}
+
+.result-stats {
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+    margin-bottom: 35px;
+}
+
+.result-stats div {
+    display: flex;
+    flex-direction: column;
+}
+
+.result-stats strong {
+    font-size: 28px;
+}
+
+.result-stats span {
+    color: #8f96a8;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.play-again {
+    border: none;
+    background: #6366f1;
+    color: white;
+
+    padding: 15px 30px;
+
+    border-radius: 12px;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.play-again:hover {
+    background: #5558d8;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+    .card {
+        padding: 25px;
+    }
+
+    .card h1 {
+        font-size: 32px;
+    }
+
+    .game-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .stats {
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .game-card {
+        padding: 30px 15px;
+    }
+
+    .game-card h1 {
+        font-size: 25px;
+    }
+
+    .handwriting {
+        font-size: 32px;
+        min-height: 150px;
+    }
+
+    .input-area {
+        flex-direction: column;
+    }
+
+    .input-area button {
+        padding: 15px;
+    }
+
+    .result-stats {
+        gap: 20px;
+    }
+}
